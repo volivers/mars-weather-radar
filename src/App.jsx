@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import WeatherCard from './components/WeatherCard'
 
 const App = () => {
 
@@ -23,9 +24,9 @@ const App = () => {
 
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1>Latest Weather at Elysium Planitia</h1>
         {forecasts.map(key => {
-          return  <h1>Sol {key[0]}</h1>
+          return <WeatherCard sol={key[0]} date={key[1].Last_UTC} season={key[1].Season} min={key[1].PRE.mn} max={key[1].PRE.mx} key={key[0]} />
         })}
     </div>
   );
