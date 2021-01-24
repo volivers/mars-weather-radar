@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.scss';
 import axios from 'axios';
 import WeatherCard from './components/WeatherCard'
 
@@ -14,7 +15,7 @@ const App = () => {
     try {
       const res = await axios.get(url) 
       const data = Object.entries(res.data);  // the response was an object by default, need to convert to array
-      const sols = data.slice(0, 7); // getting only the sols (martian days)
+      const sols = data.slice(0, 7);  // getting only the sols (martian days)
       console.log(sols);
       setForecasts(sols);
       } catch (err) {
@@ -23,12 +24,14 @@ const App = () => {
   };
 
   return (
-    <div>
+    <main>
       <h1>Latest Weather at Elysium Planitia</h1>
+      <div className="card-list">
         {forecasts.map(key => {
-          return <WeatherCard sol={key[0]} date={key[1].Last_UTC} season={key[1].Season} min={key[1].PRE.mn} max={key[1].PRE.mx} key={key[0]} />
-        })}
-    </div>
+            return <WeatherCard sol={key[0]} date={key[1].Last_UTC} season={key[1].Season} min={key[1].PRE.mn} max={key[1].PRE.mx} key={key[0]} />
+          })}
+      </div>
+    </main>
   );
 }
 
