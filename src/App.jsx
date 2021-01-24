@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const App = () => {
 
-  const [weather, setWeather] = useState([]);
+  const [forecasts, setForecasts] = useState([]);
+  useEffect(() => { getData(); },[])
 
   const getData = async () => {
     const key = "kf4yoZZJsJNBcsCkcnkgSeIVS9eLgUVpFt5nOj7n"
@@ -11,17 +12,22 @@ const App = () => {
 
     try {
       const res = await axios.get(url) 
-      console.log(res.data);
-      setWeather(res.data);
-    } catch (err) {
+      const data = Object.entries(res.data);  // the response was an object by default, need to convert to array
+      const sols = data.slice(0, 7); // getting only the sols (martian days)
+      console.log(sols);
+      setForecasts(sols);
+      } catch (err) {
       console.error(err.message);
     }
   };
 
-  useEffect(() => { getData(); },[])
-
   return (
-    <h1>Hello world</h1>
+    <div>
+      <h1>Hello World</h1>
+        {forecasts.map(key => {
+          return  <h1>Sol {key[0]}</h1>
+        })}
+    </div>
   );
 }
 
