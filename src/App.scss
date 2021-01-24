@@ -6,19 +6,26 @@
   height: 100vh;
   width: 100%;
   background-image: url('https://images.hdqwalls.com/wallpapers/planet-mars-minimalism-5k-uo.jpg');
+  // background-image: url('https://images.hdqwalls.com/wallpapers/astronaut-watching-sunset-on-mars-um.jpg');
   background-size: cover;
   font-family: 'Roboto', serif;
   font-weight: lighter;
   color: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   h1, h2, h3 {
     font-family: 'Open Sans', serif;
     font-weight: lighter;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-  } 
+  }
+
+  .logo {
+    align-self: flex-end;
+    margin: 30px 30px 0 0;
+  }
 
   .card-list {
     display: flex;
@@ -26,6 +33,34 @@
     .card {
       height: 150px;
       width: 300px;
+    }
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 15px;
+    .footer-links {
+      margin-left: 30px;
+      a {
+        color: rgba(255, 255, 255, 0.87);;
+        text-decoration: none;
+        font-size: 14px;
+        margin-top: 15px;
+        padding: 0px 5px;
+      }
+    }
+    .footer-copyright {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      text-align: right;
+      margin-right: 30px;
     }
   }
 }

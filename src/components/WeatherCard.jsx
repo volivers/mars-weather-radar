@@ -1,18 +1,15 @@
 import React from 'react';
-import { format } from 'date-fns';
+import moment from 'moment';
 
 const WeatherCard = ({ sol, date, season, min, max }) => {
 
   return (
     <div className="card">
       <h2>Sol {sol}</h2>
-      <h3>{date}</h3>
+      <h3>{moment(date).format("ddd, MMM D")}</h3>
       <hr/>
-      <p>
-        High: {max}°C
-        <br/>
-        Low: {min}°C
-      </p>
+      <p>High: {max}°C</p>
+      <p>Low: {min}°C</p>
       <p>{season}</p>
     </div>
   );

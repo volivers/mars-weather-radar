@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import axios from 'axios';
 import WeatherCard from './components/WeatherCard'
+import { Logo, Footer } from './components/Utils'
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <main>
+      <Logo />
       <h1>Latest Weather at Elysium Planitia</h1>
       <div className="single-card">
         {/* {forecasts[forecasts.length - 1].map(key => {
@@ -50,6 +52,7 @@ const App = () => {
             />
         })}
       </div>
+      <Footer />
     </main>
   );
 }
