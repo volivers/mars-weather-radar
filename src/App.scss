@@ -8,18 +8,24 @@
   background-image: url('https://images.hdqwalls.com/wallpapers/planet-mars-minimalism-5k-uo.jpg');
   background-size: cover;
   font-family: 'Roboto', serif;
+  font-weight: lighter;
   color: #fff;
   display: flex;
   flex-direction: column;
 
   h1, h2, h3 {
     font-family: 'Open Sans', serif;
+    font-weight: lighter;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
-    font-weight: lighter;
   } 
 
   .card-list {
     display: flex;
+
+    .card {
+      height: 150px;
+      width: 300px;
+    }
   }
 }

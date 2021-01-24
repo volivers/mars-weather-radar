@@ -1,5 +1,4 @@
 import React from 'react';
-import './WeatherCard.scss';
 import { format } from 'date-fns';
 
 const WeatherCard = ({ sol, date, season, min, max }) => {

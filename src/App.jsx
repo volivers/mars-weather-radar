@@ -26,10 +26,29 @@ const App = () => {
   return (
     <main>
       <h1>Latest Weather at Elysium Planitia</h1>
+      <div className="single-card">
+        {/* {forecasts[forecasts.length - 1].map(key => {
+          return <WeatherCard
+              sol={key[0]}
+              date="Today"
+              season={key[1].Season}
+              min={key[1].PRE.mn}
+              max={key[1].PRE.mx}
+              key={key[0]}
+            />
+          })} */}
+      </div>
       <div className="card-list">
         {forecasts.map(key => {
-            return <WeatherCard sol={key[0]} date={key[1].Last_UTC} season={key[1].Season} min={key[1].PRE.mn} max={key[1].PRE.mx} key={key[0]} />
-          })}
+          return <WeatherCard
+              sol={key[0]}
+              date={key[1].Last_UTC}
+              season={key[1].Season}
+              min={key[1].PRE.mn}
+              max={key[1].PRE.mx}
+              key={key[0]}
+            />
+        })}
       </div>
     </main>
   );
